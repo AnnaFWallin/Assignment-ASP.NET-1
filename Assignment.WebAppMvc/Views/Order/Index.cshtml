@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Assignment.WebAppMvc.Models.OrderModel>
+
+@{
+    ViewData["Title"] = "Ordrar";
+}
+
+
+@if (Model == null)
+{
+    <div class="text-center">
+        <p class="m-10">Du har inga ordrar</p>
+    </div>
+
+}
+
+else
+{
+
+
+    <div class="container-fluid mt-5">
+
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <h3 class="mb-5">Mina ordrar</h3>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Orderid</th>
+                            <th scope="col">Orderdatum</th>
+                            <th scope="col">Pris</th>
+                            <th scope="col">Detaljer</th>
+                        </tr>
+                    </thead>
+                      <tbody>
+
+                    @foreach (var order in Model)
+                    {
+                        <tr>
+                            <th>@order.Id</th>
+                            <th>@order.OrderDate</th>
+                            <th>@order.TotalPrice</th>
+                            <th><a class="btn btn-dark text-light btn-sm" asp-controller="Order" asp-action="Details" asp-route-id=@order.Id><i class="bi bi-info-circle"></i> Mer info</a></th>
+                        </tr>
+                    }
+                      </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+}

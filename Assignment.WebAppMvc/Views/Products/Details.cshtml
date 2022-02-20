@@ -1,0 +1,21 @@
+﻿@model Assignment.WebAppMvc.Models.ProductModel
+
+@{
+    ViewData["Title"] = "Produktinformation";
+}
+
+<div class="row mt-5 justify-content-center align-items-center">
+
+    <div class="card m-2" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">@Model.Name</h5>
+            <img src="@Model.UrlLink" alt=@Model.Name class="img-thumbnail height-50px">
+            <p class="card-text">@Model.Description</p>
+            <p class="card-text text-danger">@Model.Price kr</p>
+            <a class="btn btn-dark text-light btn-sm" asp-controller="ShoppingCart" asp-action="AddToCart" asp-route-id=@Model.Id> Lägg i varukorg</a>
+            <a class="btn btn-dark text-light btn-sm mt-1" asp-controller="Products" asp-action="Index"> Fortsätt shoppa</a>
+        </div>
+    </div>
+
+
+</div>

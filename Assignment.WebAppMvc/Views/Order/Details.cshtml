@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Assignment.WebAppMvc.Models.OrderRowModel>
+
+@{
+    ViewData["Title"] = "Orderdetaljer";
+}
+
+@{
+    decimal total = 0;
+    foreach (var item in Model)
+        total = item.Amount * item.Price;
+}
+
+
+<div class="container-fluid mt-5">
+
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <h3 class="mb-5">Dina varor</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Orderid</th>
+                        <th scope="col">Produkt</th>
+                        <th scope="col">Pris</th>
+                        <th scope="col">Antal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <th>@item.OrderId</th>
+                            <th>@item.ProductName</th>
+                            <th>@item.Price</th>
+                            <th>@item.Amount</th>
+                        </tr>
+                    }
+                </tbody>              
+            </table>
+             <p>Totalsumma @total kronor</p>
+        </div>
+    </div>
+</div>

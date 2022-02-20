@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Assignment.WebAppMvc.Models.ProductModel>
+
+@{
+    ViewData["Title"] = "Tekoppar";
+}
+
+
+
+<div class="container mt-5">
+
+    <h1 class="mt-5 mb-5">Tekoppar</h1>
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+
+@foreach(var p in Model)
+{
+    <div class="card m-2" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">@p.Name</h5>
+    <img src="@p.UrlLink" alt=@p.Name class="img-thumbnail height-50px">
+    <p class="card-text text-danger">@p.Price kr</p>
+    <a class="btn btn-dark text-light btn-sm" asp-controller="Products" asp-action="Details" asp-route-id="@p.Id" class="card-link">Mer info</a>
+    <a class="btn btn-dark text-light btn-sm" asp-controller="ShoppingCart" asp-action="AddToCart" asp-route-id=@p.Id> Lägg i varukorg</a>
+  </div>
+</div>
+}
+ </div>
+</div>

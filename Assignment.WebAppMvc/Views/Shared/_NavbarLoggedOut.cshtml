@@ -1,0 +1,40 @@
+﻿<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <div class="container-fluid ">
+          <a class="navbar-brand text-light fs-1" asp-controller="Home" asp-action="Index">BooksAndStuff</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse  d-flex flex-row-reverse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                 <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-light fs-5" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Produkter
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item" asp-controller="Products" asp-action="Index">Alla produkter</a></li>
+                  <li><a class="dropdown-item" asp-controller="Products" asp-action="Books">Böcker</a></li>
+                  <li><a class="dropdown-item" asp-controller="Products" asp-action="Bookmarks">Bokmärken</a></li>
+                  <li><a class="dropdown-item" asp-controller="Products" asp-action="Tea">Te</a></li>
+                  <li><a class="dropdown-item" asp-controller="Products" asp-action="Teacups">Tekoppar</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light fs-5" aria-current="page" asp-controller="Home" asp-action="About">Om oss</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light fs-5" asp-controller="Home" asp-action="Contact">Kontakta oss</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light fs-5" asp-controller="ShoppingCart" asp-action="Index">Min varukorg</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light fs-5 ml-3" asp-controller="Auth" asp-action="SignIn">Logga in</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light fs-5" asp-controller="Auth" asp-action="SignUp">Registera dig</a>
+              </li>
+             
+            </ul>
+          </div>
+        </div>
+      </nav>
